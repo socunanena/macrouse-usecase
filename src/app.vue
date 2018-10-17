@@ -1,27 +1,27 @@
 <template>
   <section class="section">
     <div class="container">
-      <div class="panel" v-bind:class="{ 'is-invisible': remainingSteps.includes('tee') }">
+      <div class="panel is-marginless" v-bind:class="{ 'is-hidden': remainingSteps.includes('tee') }">
         <div class="panel-heading is-radiusless" v-on:click="toStep('tee')">
           BMR & TEE
         </div>
-        <div class="panel-block" v-bind:class="{ 'is-invisible': steps[currentStep] !== 'tee' }">
+        <div class="panel-block" v-bind:class="{ 'is-hidden': steps[currentStep] !== 'tee' }">
           <a v-on:click="nextStep">Next step</a>
         </div>
       </div>
-      <div class="panel" v-bind:class="{ 'is-invisible': remainingSteps.includes('goal') }">
+      <div class="panel is-marginless" v-bind:class="{ 'is-hidden': remainingSteps.includes('goal') }">
         <div class="panel-heading is-radiusless" v-on:click="toStep('goal')">
           Goal
         </div>
-        <div class="panel-block" v-bind:class="{ 'is-invisible': steps[currentStep] !== 'goal' }">
+        <div class="panel-block" v-bind:class="{ 'is-hidden': steps[currentStep] !== 'goal' }">
           <a v-on:click="nextStep">Next step</a>
         </div>
       </div>
-      <div class="panel" v-bind:class="{ 'is-invisible': remainingSteps.includes('distribution') }">
+      <div class="panel is-marginless" v-bind:class="{ 'is-hidden': remainingSteps.includes('distribution') }">
         <div class="panel-heading is-radiusless" v-on:click="toStep('distribution')">
           Weekly distribution
         </div>
-        <div class="panel-block" v-bind:class="{ 'is-invisible': steps[currentStep] !== 'distribution' }">
+        <div class="panel-block" v-bind:class="{ 'is-hidden': steps[currentStep] !== 'distribution' }">
         </div>
       </div>
     </div>
