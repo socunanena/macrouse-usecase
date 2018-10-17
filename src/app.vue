@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="container">
-      <StepLayout :step="'tee'" :title="'BMR & TEE'">
+      <StepLayout :step="'tee'" :title="'Total Energy Expenditure'">
         <StepTee></StepTee>
       </StepLayout>
       <StepLayout :step="'goal'" :title="'Goal'">
