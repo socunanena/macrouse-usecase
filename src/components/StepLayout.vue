@@ -4,7 +4,11 @@
       {{ title }}
     </div>
     <div class="panel-block" v-bind:class="{ 'is-hidden': steps[currentStep] !== step }">
-      <slot></slot>
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <slot></slot>
+        </div>
+      </div>
     </div>
   </div>
 </template>
