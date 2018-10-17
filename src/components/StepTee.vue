@@ -3,18 +3,20 @@
     <div class="columns is-multiline">
       <!-- BEGIN Gender & Age -->
       <div class="column is-2">
-        <label class="label" for="gender">Gender</label>
+        <label class="label">Gender</label>
       </div>
       <div class="column is-4">
-        <div class="field">
-          <div class="control">
-            <div class="select">
-              <select id="gender" :value="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-              </select>
-            </div>
-          </div>
+        <div class="field has-addons">
+          <p class="control">
+            <a class="button">
+              Male
+            </a>
+          </p>
+          <p class="control">
+            <a class="button">
+              Female
+            </a>
+          </p>
         </div>
       </div>
       <div class="field column is-2">
@@ -22,9 +24,9 @@
       </div>
       <div class="column is-4">
         <div class="field has-addons">
-          <div class="control">
+          <p class="control">
             <input id="age" class="input" type="text" :value="age">
-          </div>
+          </p>
           <p class="control">
             <a class="button is-static">
               years
