@@ -70,22 +70,16 @@
       <!-- END Height & Weight -->
 
       <!-- BEGIN Exercise -->
-      <!-- slider? -->
       <div class="column is-full">
         <label class="label" for="exercise">Exercise level</label>
         <div class="field">
           <div class="control">
-            <div class="select">
-              <select id="exercise" :value="exercise">
-                <option>Male</option>
-                <option>Female</option>
-                <option>Female</option>
-                <option>Female</option>
-                <option>Female</option>
-              </select>
-            </div>
+            <input id="exercise" class="slider is-fullwidth is-circle" step="1" min="0" max="4" :value="exercise" type="range">
           </div>
         </div>
+      </div>
+      <div class="column is-one-fifth has-text-centered is-uppercase" v-for="exercise in exercises">
+        {{ exercise }}
       </div>
       <!-- END Exercise -->
 
@@ -105,6 +99,7 @@
       height: undefined,
       weight: undefined,
       exercise: undefined,
+      exercises: ['none', 'low', 'medium', 'high', 'extreme'],
     }),
     methods: {
       nextStep() {
