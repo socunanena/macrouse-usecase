@@ -39,7 +39,7 @@
         return this.$store.state.currentStep;
       },
       remainingSteps() {
-        return this.$store.state.steps.slice(this.$store.state.currentStep + 1);
+        return this.steps.slice(this.currentStep + 1);
       },
     },
     methods: {
