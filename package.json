@@ -2,8 +2,22 @@
   "name": "macrouse-usecase",
   "version": "0.1.0",
   "description": "Tool to calculate your macros distribution along the week",
-  "main": "index.js",
+  "main": "src/index.html",
   "repository": "git@github.com:socunanena/macrouse-usecase.git",
   "author": "Natàlia <natalia.cavi@gmail.com>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "parcel src/index.html --open"
+  },
+  "dependencies": {
+    "bulma": "^0.7.2",
+    "macrouse": "^2.1.0",
+    "vue": "^2.5.17",
+    "vue-hot-reload-api": "^2.3.1"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.2.0",
+    "parcel-bundler": "^1.10.3",
+    "vue-template-compiler": "^2.5.17"
+  }
 }
