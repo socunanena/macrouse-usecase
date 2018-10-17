@@ -31,21 +31,23 @@
 <script>
   export default {
     name: 'Home',
-    data: () => ({
-      steps: ['tee', 'goal', 'distribution'],
-      currentStep: 0,
-    }),
     computed: {
-      remainingSteps: function() {
-        return this.steps.slice(this.currentStep + 1);
+      steps() {
+        return this.$store.state.steps;
+      },
+      currentStep() {
+        return this.$store.state.currentStep;
+      },
+      remainingSteps() {
+        return this.$store.state.steps.slice(this.$store.state.currentStep + 1);
       },
     },
     methods: {
-      nextStep: function() {
-        this.currentStep += 1;
+      nextStep() {
+        this.$store.commit('nextStep');
       },
-      toStep: function(step) {
-        this.currentStep = this.steps.indexOf(step);
+      toStep(step) {
+        this.$store.commit('toStep', { step });
       },
     },
   };
