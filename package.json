@@ -1,0 +1,9 @@
+{
+  "name": "macrouse-usecase",
+  "version": "0.1.0",
+  "description": "Tool to calculate your macros distribution along the week",
+  "main": "index.js",
+  "repository": "git@github.com:socunanena/macrouse-usecase.git",
+  "author": "Natàlia <natalia.cavi@gmail.com>",
+  "license": "Apache-2.0"
+}
