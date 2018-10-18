@@ -8,6 +8,9 @@ const store = new Vuex.Store({
   state: {
     steps: ['tee', 'goal', 'distribution'],
     currentStep: 0,
+    user: {
+      tee: undefined,
+    },
   },
   mutations: {
     nextStep(state) {
@@ -15,6 +18,9 @@ const store = new Vuex.Store({
     },
     toStep(state, { step }) {
       state.currentStep = state.steps.indexOf(step);
+    },
+    tee(state, tee) {
+      state.user.tee = tee;
     },
   },
 });

@@ -25,7 +25,7 @@
     <div class="column is-4">
       <div class="field has-addons">
         <p class="control">
-          <input id="age" class="input" type="text" v-model.number="user.age">
+          <input id="age" class="input" type="number" v-model.number="user.age">
         </p>
         <p class="control">
           <a class="button is-static">
@@ -43,7 +43,7 @@
     <div class="column is-4">
       <div class="field has-addons">
         <p class="control">
-          <input id="height" class="input" type="text" v-model.number="user.height">
+          <input id="height" class="input" type="number" v-model.number="user.height">
         </p>
         <p class="control">
           <a class="button is-static">
@@ -58,7 +58,7 @@
     <div class="column is-4">
       <div class="field has-addons">
         <p class="control">
-          <input id="weight" class="input" type="text" v-model.number="user.weight">
+          <input id="weight" class="input" type="number" v-model.number="user.weight">
         </p>
         <p class="control">
           <a class="button is-static">
@@ -83,15 +83,18 @@
     </div>
     <!-- END Exercise -->
 
-    <a class="column" v-on:click="nextStep">Next step</a>
+    <div class="column">
+      <a class="button" v-on:click="submit">Next step</a>
+    </div>
   </div>
 </template>
 
 <script>
+  import Macrouse from 'macrouse';
+
   export default {
     name: 'StepTee',
     data: () => ({
-      // update values when typing the input
       user: {
         gender: undefined,
         age: undefined,
@@ -104,6 +107,15 @@
     methods: {
       nextStep() {
         this.$store.commit('nextStep');
+      },
+      calculateTee() {
+        const macrouse = new Macrouse(this.user);
+
+        this.$store.commit('tee', macrouse.tee());
+      },
+      submit() {
+        this.calculateTee();
+        this.nextStep();
       },
     },
   };
