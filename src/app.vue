@@ -32,6 +32,9 @@
       tee() {
         return this.$store.state.user.tee;
       },
+      goal() {
+        return this.$store.state.user.goal;
+      },
     },
   };
 </script>
