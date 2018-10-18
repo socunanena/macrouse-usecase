@@ -10,6 +10,7 @@ const store = new Vuex.Store({
     currentStep: 0,
     user: {
       tee: undefined,
+      goal: undefined,
     },
   },
   mutations: {
@@ -21,6 +22,9 @@ const store = new Vuex.Store({
     },
     tee(state, tee) {
       state.user.tee = tee;
+    },
+    goal(state, goal) {
+      state.user.goal = goal;
     },
   },
 });
