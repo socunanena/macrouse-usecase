@@ -8,18 +8,18 @@
     <div class="column is-4">
       <div class="field has-addons">
         <p class="control">
-          <a class="button">
+          <label class="radio">
+            <input type="radio" v-model="user.gender" value="male">
             Male
-          </a>
-        </p>
-        <p class="control">
-          <a class="button">
+          </label>
+          <label class="radio">
+            <input type="radio" v-model="user.gender" value="female">
             Female
-          </a>
+          </label>
         </p>
       </div>
     </div>
-    <div class="field column is-2">
+    <div class="column is-2">
       <label class="label" for="age">Age</label>
     </div>
     <div class="column is-4">
@@ -73,13 +73,13 @@
     <div class="column is-full">
       <label class="label" for="exercise">Exercise level</label>
       <div class="field">
-        <div class="control">
-          <input id="exercise" class="slider is-fullwidth is-circle" step="1" min="0" max="4" v-model="user.exercise" type="range">
-        </div>
+        <p class="control has-text-centered">
+          <label class="radio is-uppercase" v-for="exercise in exercises">
+            <input id="exercise" type="radio" v-model="user.exercise" :value="exercise">
+            {{ exercise }}
+          </label>
+        </p>
       </div>
-    </div>
-    <div class="column is-one-fifth has-text-centered is-uppercase" v-for="exercise in exercises">
-      {{ exercise }}
     </div>
     <!-- END Exercise -->
 
