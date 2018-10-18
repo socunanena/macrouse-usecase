@@ -25,7 +25,7 @@
     <div class="column is-4">
       <div class="field has-addons">
         <p class="control">
-          <input id="age" class="input" type="text" :value="age">
+          <input id="age" class="input" type="text" v-model.number="user.age">
         </p>
         <p class="control">
           <a class="button is-static">
@@ -43,7 +43,7 @@
     <div class="column is-4">
       <div class="field has-addons">
         <p class="control">
-          <input id="height" class="input" type="text" :value="height">
+          <input id="height" class="input" type="text" v-model.number="user.height">
         </p>
         <p class="control">
           <a class="button is-static">
@@ -58,7 +58,7 @@
     <div class="column is-4">
       <div class="field has-addons">
         <p class="control">
-          <input id="weight" class="input" type="text" :value="weight">
+          <input id="weight" class="input" type="text" v-model.number="user.weight">
         </p>
         <p class="control">
           <a class="button is-static">
@@ -74,7 +74,7 @@
       <label class="label" for="exercise">Exercise level</label>
       <div class="field">
         <div class="control">
-          <input id="exercise" class="slider is-fullwidth is-circle" step="1" min="0" max="4" :value="exercise" type="range">
+          <input id="exercise" class="slider is-fullwidth is-circle" step="1" min="0" max="4" v-model="user.exercise" type="range">
         </div>
       </div>
     </div>
@@ -92,11 +92,13 @@
     name: 'StepTee',
     data: () => ({
       // update values when typing the input
-      gender: undefined,
-      age: undefined,
-      height: undefined,
-      weight: undefined,
-      exercise: undefined,
+      user: {
+        gender: undefined,
+        age: undefined,
+        height: undefined,
+        weight: undefined,
+        exercise: undefined,
+      },
       exercises: ['none', 'low', 'medium', 'high', 'extreme'],
     }),
     methods: {
