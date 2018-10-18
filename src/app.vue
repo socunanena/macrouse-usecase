@@ -33,5 +33,4 @@
 
 <style lang="sass">
   @import '~bulma/bulma.sass'
-  @import '~bulma-slider/src/sass'
 </style>
