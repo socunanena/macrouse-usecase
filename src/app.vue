@@ -1,10 +1,10 @@
 <template>
   <section class="section">
     <div class="container">
-      <StepLayout :step="'tee'" :title="'Total Energy Expenditure'">
+      <StepLayout :step="'tee'" :title="'Total Energy Expenditure'" :value="tee">
         <StepTee></StepTee>
       </StepLayout>
-      <StepLayout :step="'goal'" :title="'Goal'">
+      <StepLayout :step="'goal'" :title="'Goal'" :value="goal">
         <StepGoal></StepGoal>
       </StepLayout>
       <StepLayout :step="'distribution'" :title="'Weekly distribution'">
@@ -27,6 +27,11 @@
       StepTee,
       StepGoal,
       StepDistribution,
+    },
+    computed: {
+      tee() {
+        return this.$store.state.user.tee;
+      },
     },
   };
 </script>

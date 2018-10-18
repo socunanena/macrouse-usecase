@@ -1,7 +1,18 @@
 <template>
   <div class="panel is-marginless" v-bind:class="{ 'is-hidden': remainingSteps.includes(step) }">
     <div class="panel-heading is-radiusless" v-on:click="toStep(step)">
-      {{ title }}
+      <nav class="level">
+        <div class="level-left">
+          <div class="level-item">
+            {{ title }}
+          </div>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            {{ value }}
+          </div>
+        </div>
+      </nav>
     </div>
     <div class="panel-block" v-bind:class="{ 'is-hidden': steps[currentStep] !== step }">
       <div class="columns is-centered">
@@ -19,6 +30,7 @@
     props: {
       step: String,
       title: String,
+      value: String,
     },
     computed: {
       steps() {
