@@ -42,7 +42,6 @@
 </template>
 
 <script>
-  import StepLayout from './components/StepLayout';
   import StepTee from './components/StepTee';
   import StepGoal from './components/StepGoal';
   import StepDistribution from './components/StepDistribution';
@@ -51,7 +50,6 @@
   export default {
     name: 'Home',
     components: {
-      StepLayout,
       StepTee,
       StepGoal,
       StepDistribution,
