@@ -9,8 +9,6 @@
         </label>
       </p>
     </div>
-
-    <a class="button" v-on:click="submit">Next step</a>
   </div>
 </template>
 
@@ -30,15 +28,20 @@
       },
     }),
     methods: {
-      nextStep() {
-        this.$store.commit('nextStep');
+      beforeNext() {
+        const errors = this.validateGoal();
+
+        if (errors.length === 0) {
+          this.calculateGoal();
+        }
+
+        return errors;
+      },
+      validateGoal() {
+        return [];
       },
       calculateGoal() {
         this.$store.commit('goal', Math.round(this.$store.state.user.tee * this.user.goal));
-      },
-      submit() {
-        this.calculateGoal();
-        this.nextStep();
       },
     },
   };
