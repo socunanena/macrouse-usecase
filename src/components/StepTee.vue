@@ -83,9 +83,6 @@
     </div>
     <!-- END Exercise -->
 
-    <div class="column">
-      <a class="button" v-on:click="submit">Next step</a>
-    </div>
   </div>
 </template>
 
@@ -105,17 +102,22 @@
       exercises: ['none', 'low', 'medium', 'high', 'extreme'],
     }),
     methods: {
-      nextStep() {
-        this.$store.commit('nextStep');
+      beforeNext() {
+        const errors = this.validateUser();
+
+        if (errors.length === 0) {
+          this.calculateTee();
+        }
+
+        return errors;
+      },
+      validateUser() {
+        return [];
       },
       calculateTee() {
         const macrouse = new Macrouse(this.user);
 
         this.$store.commit('tee', macrouse.tee());
-      },
-      submit() {
-        this.calculateTee();
-        this.nextStep();
       },
     },
   };
